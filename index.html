@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnippetEase | Free Code Snippet Generator for Bloggers</title>
+
+    <link rel="icon" href="favicon.png" />
+
+    <meta name="description"
+        content="A free tool for generating code snippets effortlessly. Boost your productivity with our easy-to-use code generator designed for developers." />
+    <meta name="keywords"
+        content="free code generator, code snippets, developer tools, generate code online, coding tool, programming, software development, web development, munjitso, devtool, dev tools, devtool.site, munjitso engineer, blog, blogging, SnippetEase" />
+    <meta name="author" content="DevTool - Code Snippet Generator" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-97070NE0BC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-97070NE0BC');
+    </script>
+
+
+    <!-- Open Graph meta tags for social media -->
+    <meta property="og:title" content="Free Code Snippet Generator - Boost Your Productivity" />
+    <meta property="og:description"
+        content="Use our free and useful tool to generate code snippets effortlessly. Ideal for developers looking to save time and improve workflow." />
+    <meta property="og:image" content="URL_to_your_image" />
+    <meta property="og:url" content="https://devtool.site" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Free Code Snippet Generator - Boost Your Productivity" />
+    <meta name="twitter:description"
+        content="Explore our free tool for generating code snippets effortlessly. Perfect for developers seeking to streamline their coding process." />
+    <meta name="twitter:image" content="URL_to_your_image" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/ruby/ruby.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/solarized.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/material.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-cpp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-ruby.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <h3>SnippetEase</h3>
+            <div class="navbar-items">
+                <a href="https://munjitso.vercel.app/" target="_blank">Portfolio</a>
+                <a href="https://buymeacoffee.com/munjitso" target="_blank">Donate</a>
+                <a href="https://www.munjitso.engineer/" style="margin-right:0 ;" target="_blank">Blog</a>
+            </div>
+        </div>
+        <div class="showcase">
+            <div>
+                <a href="https://www.producthunt.com/posts/snippetease?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-snippetease" target="_blank"><img style="all: initial;" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=467834&theme=dark" alt="SnippetEase - Embeddable&#0032;code&#0032;snippet&#0032;generator&#0032; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+                <p>The Best <span
+                        style="color: #fff; background-color: #3a5a40; padding: 0 7px; --tw-rotate: -1deg;">Code Snippet
+                        Generator</span> for
+                    Bloggers</p>
+                <p style="font-size: 1.2rem; font-weight: 300;">A free tool that allows bloggers and developers to
+                    generate
+                    beautifully formatted code snippets for their websites and articles.</p>
+                    <a href="#snippet-generator" class="start">Get Started</a>
+            </div>
+            <img src="images/thumbnail.png">
+        </div>
+        <div class="tool-container" id="snippet-generator">
+            <div style="display: flex; align-items: center; width: 100%;">
+                <div style="padding:0 0.5rem; width: 100%;">
+                    <h4>Language:</h4>
+                    <select id="language" class="language-select">
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="htmlmixed">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="text/x-java">Java</option>
+                        <option value="text/x-c++src">C++</option>
+                        <option value="ruby">Ruby</option>
+                    </select>
+                </div>
+                <div style="padding:0 0.5rem; width: 100%;">
+                    <h4>Theme:</h4>
+                    <select id="theme" class="theme-select">
+                        <option value="dracula">Dracula</option>
+                        <option value="monokai">Monokai</option>
+                        <option value="solarized dark">Solarized Dark</option>
+                        <option value="material">Material</option>
+                    </select>
+                </div>
+            </div>
+            <textarea id="code">def greet(name):
+    print(f"Hello, {name}!")
+
+greet("World")</textarea>
+            <button onclick="generateAndCopy()" class="btn">Generate and Copy Styled HTML</button>
+            <div id="message"></div>
+        </div>
+        <div class="preview-container">
+            <h2 class="preview-title">Preview</h2>
+            <div id="preview"></div>
+            <div>
+                <h1></h1>
+                <p>Are you a blogger or developer looking for an elegant way to showcase your code snippets in your
+                    articles? Look no further! Mohamed Amine Belkacem, an engineering student at ENSA Kenitra, has
+                    created
+                    SnippetEase, a fantastic free tool designed specifically for this purpose. In this article,
+                    we'll
+                    explore
+                    the features and benefits of SnippetEase and how it can enhance your blogging experience.</p>
+
+                <h2>What is SnippetEase?</h2>
+                <p>SnippetEase is a user-friendly, free-to-use tool that allows bloggers and developers to generate
+                    beautifully formatted code snippets for their websites and articles.
+                    SnippetEase is designed to be accessible and easy to use, ensuring that anyone can integrate
+                    stunning code
+                    displays into their content without hassle.</p>
+
+                <h2>Key Features of SnippetEase</h2>
+                <h3>1. User-Friendly Interface</h3>
+                <p>SnippetEase offers a clean and intuitive interface that makes generating code snippets a breeze.
+                    Whether
+                    you're a seasoned developer or a beginner, you can quickly create and customize your code
+                    snippets
+                    to
+                    fit seamlessly into your blog posts.</p>
+
+                <h3>2. Elegant Formatting Options</h3>
+                <p>One of the standout features of SnippetEase is its ability to produce elegantly formatted code
+                    snippets.
+                    With various themes and customization options, you can match the style of your snippets to your
+                    blog's
+                    design, making your articles visually appealing and professional.</p>
+
+                <h3>3. Wide Range of Supported Languages</h3>
+                <p>SnippetEase supports a wide variety of programming languages, including Python, JavaScript, HTML,
+                    CSS, and
+                    many more. This versatility ensures that no matter what language your code is written in,
+                    SnippetEase can
+                    handle it.</p>
+
+                <h3>4. Free Forever</h3>
+                <p>SnippetEase is completely free to use—forever. There are no hidden fees or premium versions.
+                    This tool has been made available to the community at no cost, making it an excellent
+                    resource
+                    for
+                    bloggers on a budget.</p>
+
+                <h3>5. Easy Integration</h3>
+                <p>Integrating the generated code snippets into your blog is straightforward. SnippetEase provides
+                    you
+                    with a
+                    simple copy-paste code that you can add to your articles. This ease of use means you can focus
+                    more
+                    on
+                    writing and less on formatting.</p>
+
+                <h2>How to Use SnippetEase</h2>
+                <p>Using SnippetEase is incredibly simple. Follow these steps to generate your first code snippet:
+                </p>
+                <ol>
+                    <li><strong>Paste Your Code:</strong> Paste your code into the provided text area.</li>
+                    <li><strong>Customize the Appearance:</strong> Choose from various themes and formatting options
+                        to
+                        style your snippet.</li>
+                    <li><strong>Generate and Copy:</strong> Click the "Generate and Copy Styled HTML" button to
+                        create
+                        your formatted code
+                        snippet. Then, copy the provided code and paste it into your blog post as a Custom HTML.
+                    </li>
+                </ol>
+
+
+                <h2>Conclusion</h2>
+                <p>SnippetEase is a must-have tool for bloggers and developers who want to showcase their code
+                    snippets
+                    in a
+                    professional and visually appealing manner. With its user-friendly interface, wide range of
+                    supported
+                    languages, and elegant formatting options, SnippetEase is set to become a staple in the blogging
+                    toolkit.
+                    Best of all, it's free forever.</p>
+                <p>Give SnippetEase a try today and elevate your blog posts to the next level. Check out as well <a
+                        href="https://munjitso.engineer" style="text-decoration: none;">our Blog
+                        Website
+                        about Mechatronics</a> to get started building your own robots and machines.</p>
+                <p>Feel free to reach out if you have any questions or need further assistance with SnippetEase.
+                    Happy
+                    coding
+                    and blogging!</p>
+            </div>
+
+        </div>
+    </div>
+    <footer class="links">
+        <div>
+            <h3>Quick Links</h3>
+            <a href="https://munjitso.vercel.app/" target="_blank">Portfolio</a>
+                <a href="https://buymeacoffee.com/munjitso" target="_blank">Donate</a>
+                <a href="https://www.munjitso.engineer/" style="margin-right:0 ;" target="_blank">Blog</a>
+        </div>
+        <div>
+            <h3>Social</h3>
+            <a href="https://www.instagram.com/munjitso/" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/in/mohamed-amine-belkacem/" target="_blank">LinkedIn</a>
+            <a href="https://x.com/munjitso" target="_blank"">Twitter</a>
+        </div>
+    </footer>
+    <footer class="copyright">
+        <div>Copyright © 2024 by <a href="https://devtool.site/" style="text-decoration: none;color:#ddd">SnippetEase
+            </a></div>
+        <div class="social-icons" style="text-decoration: none;color:#ddd">
+            <a href="https://www.linkedin.com/in/mohamed-amine-belkacem/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/munjitso/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://munjitso.engineer/" target="_blank"><i class="fa-solid fa-link"></i></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
